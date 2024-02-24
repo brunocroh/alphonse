@@ -3,14 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/index.ts",
-    "./globals.css": "./globals.css",
-    "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/ui/*.tsx"
+    ".": "./dist/index.js",
+    "./globals.css": "./globals.css"
   },
   "scripts": {
     "build": "tsup src/index.ts",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "ui:add": "pnpm --filter @alphonse/ui ui:add"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

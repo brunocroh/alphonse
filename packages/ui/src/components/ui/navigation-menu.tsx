@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { cva } from "class-variance-authority";
-import { ChevronDown } from "lucide-react";
+import * as React from "react"
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
+import { cva } from "class-variance-authority"
+import { ChevronDown } from "lucide-react"
 
-import { cn } from "@ui/lib/utils";
+import { cn } from "@ui/lib/utils"
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -12,16 +12,16 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "yesrelative yesz-10 yesflex yesmax-w-max yesflex-1 yesitems-center yesjustify-center",
-      className,
+      "relative z-10 flex max-w-max flex-1 items-center justify-center",
+      className
     )}
     {...props}
   >
     {children}
     <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
-));
-NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
+))
+NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
 
 const NavigationMenuList = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.List>,
@@ -30,19 +30,19 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "yesgroup yesflex yesflex-1 yeslist-none yesitems-center yesjustify-center yesspace-x-1",
-      className,
+      "group flex flex-1 list-none items-center justify-center space-x-1",
+      className
     )}
     {...props}
   />
-));
-NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
+))
+NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 
-const NavigationMenuItem = NavigationMenuPrimitive.Item;
+const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "yesgroup yesinline-flex yesh-10 yesw-max yesitems-center yesjustify-center yesrounded-md yesbg-background yespx-4 yespy-2 yestext-sm yesfont-medium yestransition-colors hover:yesbg-accent hover:yestext-accent-foreground focus:yesbg-accent focus:yestext-accent-foreground focus:yesoutline-none disabled:yespointer-events-none disabled:yesopacity-50 data-[active]:yesbg-accent/50 data-[state=open]:yesbg-accent/50",
-);
+  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+)
 
 const NavigationMenuTrigger = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
@@ -50,17 +50,17 @@ const NavigationMenuTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
-    className={cn(navigationMenuTriggerStyle(), "yesgroup", className)}
+    className={cn(navigationMenuTriggerStyle(), "group", className)}
     {...props}
   >
     {children}{" "}
     <ChevronDown
-      className="yesrelative yestop-[1px] yesml-1 yesh-3 yesw-3 yestransition yesduration-200 group-data-[state=open]:yesrotate-180"
+      className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
       aria-hidden="true"
     />
   </NavigationMenuPrimitive.Trigger>
-));
-NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;
+))
+NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName
 
 const NavigationMenuContent = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Content>,
@@ -69,37 +69,33 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "yesleft-0 yestop-0 yesw-full data-[motion^=from-]:yesanimate-in data-[motion^=to-]:yesanimate-out data-[motion^=from-]:yesfade-in data-[motion^=to-]:yesfade-out data-[motion=from-end]:yesslide-in-from-right-52 data-[motion=from-start]:yesslide-in-from-left-52 data-[motion=to-end]:yesslide-out-to-right-52 data-[motion=to-start]:yesslide-out-to-left-52 md:yesabsolute md:yesw-auto yes",
-      className,
+      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto ",
+      className
     )}
     {...props}
   />
-));
-NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
+))
+NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName
 
-const NavigationMenuLink = NavigationMenuPrimitive.Link;
+const NavigationMenuLink = NavigationMenuPrimitive.Link
 
 const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <div
-    className={cn(
-      "yesabsolute yesleft-0 yestop-full yesflex yesjustify-center",
-    )}
-  >
+  <div className={cn("absolute left-0 top-full flex justify-center")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "yesorigin-top-center yesrelative yesmt-1.5 yesh-[var(--radix-navigation-menu-viewport-height)] yesw-full yesoverflow-hidden yesrounded-md yesborder yesbg-popover yestext-popover-foreground yesshadow-lg data-[state=open]:yesanimate-in data-[state=closed]:yesanimate-out data-[state=closed]:yeszoom-out-95 data-[state=open]:yeszoom-in-90 md:yesw-[var(--radix-navigation-menu-viewport-width)]",
-        className,
+        "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
+        className
       )}
       ref={ref}
       {...props}
     />
   </div>
-));
+))
 NavigationMenuViewport.displayName =
-  NavigationMenuPrimitive.Viewport.displayName;
+  NavigationMenuPrimitive.Viewport.displayName
 
 const NavigationMenuIndicator = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Indicator>,
@@ -108,16 +104,16 @@ const NavigationMenuIndicator = React.forwardRef<
   <NavigationMenuPrimitive.Indicator
     ref={ref}
     className={cn(
-      "yestop-full yesz-[1] yesflex yesh-1.5 yesitems-end yesjustify-center yesoverflow-hidden data-[state=visible]:yesanimate-in data-[state=hidden]:yesanimate-out data-[state=hidden]:yesfade-out data-[state=visible]:yesfade-in",
-      className,
+      "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in",
+      className
     )}
     {...props}
   >
-    <div className="yesrelative yestop-[60%] yesh-2 yesw-2 yesrotate-45 yesrounded-tl-sm yesbg-border yesshadow-md" />
+    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
   </NavigationMenuPrimitive.Indicator>
-));
+))
 NavigationMenuIndicator.displayName =
-  NavigationMenuPrimitive.Indicator.displayName;
+  NavigationMenuPrimitive.Indicator.displayName
 
 export {
   navigationMenuTriggerStyle,
@@ -129,4 +125,4 @@ export {
   NavigationMenuLink,
   NavigationMenuIndicator,
   NavigationMenuViewport,
-};
+}

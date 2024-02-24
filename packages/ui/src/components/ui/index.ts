@@ -6,7 +6,14 @@ export * from "./avatar";
 export * from "./badge";
 export * from "./button";
 export * from "./calendar";
-export * from "./card";
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "./card";
 export * from "./carousel";
 export * from "./checkbox";
 export * from "./collapsible";

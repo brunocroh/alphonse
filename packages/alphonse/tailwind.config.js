@@ -7,7 +7,6 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -73,5 +72,6 @@ module.exports = {
       },
     },
   },
+  purge: ["../ui/src/**/*.{js,jsx,ts,tsx}"],
   plugins: [require("tailwindcss-animate")],
 };

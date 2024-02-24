@@ -5,26 +5,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@ui/lib/utils";
 
 const buttonVariants = cva(
-  "yesinline-flex yesitems-center yesjustify-center yeswhitespace-nowrap yesrounded-md yestext-sm yesfont-medium yesring-offset-background yestransition-colors focus-visible:yesoutline-none focus-visible:yesring-2 focus-visible:yesring-ring focus-visible:yesring-offset-2 disabled:yespointer-events-none disabled:yesopacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default:
-          "yesbg-primary yestext-primary-foreground hover:yesbg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:
-          "yesbg-destructive yestext-destructive-foreground hover:yesbg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "yesborder yesborder-input yesbg-background hover:yesbg-accent hover:yestext-accent-foreground",
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "yesbg-secondary yestext-secondary-foreground hover:yesbg-secondary/80",
-        ghost: "hover:yesbg-accent hover:yestext-accent-foreground",
-        link: "yestext-primary yesunderline-offset-4 hover:yesunderline",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "yesh-10 yespx-4 yespy-2",
-        sm: "yesh-9 yesrounded-md yespx-3",
-        lg: "yesh-11 yesrounded-md yespx-8",
-        icon: "yesh-10 yesw-10",
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
       },
     },
     defaultVariants: {
@@ -42,15 +41,13 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "input";
+    const Comp = asChild ? Slot : "button";
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
-      >
-        Olha la
-      </Comp>
+      />
     );
   },
 );

@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { type DialogProps } from "@radix-ui/react-dialog";
-import { Command as CommandPrimitive } from "cmdk";
-import { Search } from "lucide-react";
+import * as React from "react"
+import { type DialogProps } from "@radix-ui/react-dialog"
+import { Command as CommandPrimitive } from "cmdk"
+import { Search } from "lucide-react"
 
-import { cn } from "@ui/lib/utils";
-import { Dialog, DialogContent } from "@ui/components/ui/dialog";
+import { cn } from "@ui/lib/utils"
+import { Dialog, DialogContent } from "@ui/components/ui/dialog"
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -15,49 +15,46 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "yesflex yesh-full yesw-full yesflex-col yesoverflow-hidden yesrounded-md yesbg-popover yestext-popover-foreground",
-      className,
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+      className
     )}
     {...props}
   />
-));
-Command.displayName = CommandPrimitive.displayName;
+))
+Command.displayName = CommandPrimitive.displayName
 
 interface CommandDialogProps extends DialogProps {}
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
-      <DialogContent className="yesoverflow-hidden yesp-0 yesshadow-lg">
-        <Command className="[&_[cmdk-group-heading]]:yespx-2 [&_[cmdk-group-heading]]:yesfont-medium [&_[cmdk-group-heading]]:yestext-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:yespt-0 [&_[cmdk-group]]:yespx-2 [&_[cmdk-input-wrapper]_svg]:yesh-5 [&_[cmdk-input-wrapper]_svg]:yesw-5 [&_[cmdk-input]]:yesh-12 [&_[cmdk-item]]:yespx-2 [&_[cmdk-item]]:yespy-3 [&_[cmdk-item]_svg]:yesh-5 [&_[cmdk-item]_svg]:yesw-5">
+      <DialogContent className="overflow-hidden p-0 shadow-lg">
+        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
           {children}
         </Command>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div
-    className="yesflex yesitems-center yesborder-b yespx-3"
-    cmdk-input-wrapper=""
-  >
-    <Search className="yesmr-2 yesh-4 yesw-4 yesshrink-0 yesopacity-50" />
+  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+    <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "yesflex yesh-11 yesw-full yesrounded-md yesbg-transparent yespy-3 yestext-sm yesoutline-none placeholder:yestext-muted-foreground disabled:yescursor-not-allowed disabled:yesopacity-50",
-        className,
+        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        className
       )}
       {...props}
     />
   </div>
-));
+))
 
-CommandInput.displayName = CommandPrimitive.Input.displayName;
+CommandInput.displayName = CommandPrimitive.Input.displayName
 
 const CommandList = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.List>,
@@ -65,15 +62,12 @@ const CommandList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn(
-      "yesmax-h-[300px] yesoverflow-y-auto yesoverflow-x-hidden",
-      className,
-    )}
+    className={cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className)}
     {...props}
   />
-));
+))
 
-CommandList.displayName = CommandPrimitive.List.displayName;
+CommandList.displayName = CommandPrimitive.List.displayName
 
 const CommandEmpty = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Empty>,
@@ -81,12 +75,12 @@ const CommandEmpty = React.forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="yespy-6 yestext-center yestext-sm"
+    className="py-6 text-center text-sm"
     {...props}
   />
-));
+))
 
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
+CommandEmpty.displayName = CommandPrimitive.Empty.displayName
 
 const CommandGroup = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Group>,
@@ -95,14 +89,14 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      "yesoverflow-hidden yesp-1 yestext-foreground [&_[cmdk-group-heading]]:yespx-2 [&_[cmdk-group-heading]]:yespy-1.5 [&_[cmdk-group-heading]]:yestext-xs [&_[cmdk-group-heading]]:yesfont-medium [&_[cmdk-group-heading]]:yestext-muted-foreground",
-      className,
+      "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+      className
     )}
     {...props}
   />
-));
+))
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName;
+CommandGroup.displayName = CommandPrimitive.Group.displayName
 
 const CommandSeparator = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Separator>,
@@ -110,11 +104,11 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn("yes-mx-1 yesh-px yesbg-border", className)}
+    className={cn("-mx-1 h-px bg-border", className)}
     {...props}
   />
-));
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
+))
+CommandSeparator.displayName = CommandPrimitive.Separator.displayName
 
 const CommandItem = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Item>,
@@ -123,14 +117,14 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "yesrelative yesflex yescursor-default yesselect-none yesitems-center yesrounded-sm yespx-2 yespy-1.5 yestext-sm yesoutline-none aria-selected:yesbg-accent aria-selected:yestext-accent-foreground data-[disabled]:yespointer-events-none data-[disabled]:yesopacity-50",
-      className,
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
     )}
     {...props}
   />
-));
+))
 
-CommandItem.displayName = CommandPrimitive.Item.displayName;
+CommandItem.displayName = CommandPrimitive.Item.displayName
 
 const CommandShortcut = ({
   className,
@@ -139,14 +133,14 @@ const CommandShortcut = ({
   return (
     <span
       className={cn(
-        "yesml-auto yestext-xs yestracking-widest yestext-muted-foreground",
-        className,
+        "ml-auto text-xs tracking-widest text-muted-foreground",
+        className
       )}
       {...props}
     />
-  );
-};
-CommandShortcut.displayName = "CommandShortcut";
+  )
+}
+CommandShortcut.displayName = "CommandShortcut"
 
 export {
   Command,
@@ -158,4 +152,4 @@ export {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-};
+}

@@ -1,32 +1,32 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import * as TogglePrimitive from "@radix-ui/react-toggle";
-import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react"
+import * as TogglePrimitive from "@radix-ui/react-toggle"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@ui/lib/utils";
+import { cn } from "@ui/lib/utils"
 
 const toggleVariants = cva(
-  "yesinline-flex yesitems-center yesjustify-center yesrounded-md yestext-sm yesfont-medium yesring-offset-background yestransition-colors hover:yesbg-muted hover:yestext-muted-foreground focus-visible:yesoutline-none focus-visible:yesring-2 focus-visible:yesring-ring focus-visible:yesring-offset-2 disabled:yespointer-events-none disabled:yesopacity-50 data-[state=on]:yesbg-accent data-[state=on]:yestext-accent-foreground",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
   {
     variants: {
       variant: {
-        default: "yesbg-transparent",
+        default: "bg-transparent",
         outline:
-          "yesborder yesborder-input yesbg-transparent hover:yesbg-accent hover:yestext-accent-foreground",
+          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
       },
       size: {
-        default: "yesh-10 yespx-3",
-        sm: "yesh-9 yespx-2.5",
-        lg: "yesh-11 yespx-5",
+        default: "h-10 px-3",
+        sm: "h-9 px-2.5",
+        lg: "h-11 px-5",
       },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
     },
-  },
-);
+  }
+)
 
 const Toggle = React.forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,
@@ -38,8 +38,8 @@ const Toggle = React.forwardRef<
     className={cn(toggleVariants({ variant, size, className }))}
     {...props}
   />
-));
+))
 
-Toggle.displayName = TogglePrimitive.Root.displayName;
+Toggle.displayName = TogglePrimitive.Root.displayName
 
-export { Toggle, toggleVariants };
+export { Toggle, toggleVariants }

@@ -1,6 +1,5 @@
 import "@alphonse/ui/globals.css";
-
-import "./global.css";
+import "./globals.css";
 
 import { EditorContent, useEditor } from "@tiptap/react";
 import Document from "@tiptap/extension-document";
@@ -42,7 +41,7 @@ const AlchemyEditor = () => {
     <>
       <BubbleMenu editor={editor} />
       <FloatingMenu editor={editor} />
-      <Card className="w-full bg-red-500">
+      <Card className="w-full">
         <CardHeader>
           <div>
             <input
