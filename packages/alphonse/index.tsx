@@ -6,7 +6,7 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Heading from "@tiptap/extension-heading";
 import React from "react";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import { Card, CardContent, CardHeader } from "@alphonse/ui/components/ui/card";
 import { FloatingMenu, BubbleMenu } from "./extensions";
 
 const AlchemyEditor = () => {

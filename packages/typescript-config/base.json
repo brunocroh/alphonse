@@ -15,6 +15,10 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2022"
+    "target": "ES2022",
+    "paths": {
+      "@/lib/utils": ["packages/ui/src/lib/utils"],
+      "@/components/ui": ["packages/ui/src/components/ui"]
+    }
   }
 }

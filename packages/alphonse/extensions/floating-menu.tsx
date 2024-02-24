@@ -1,6 +1,6 @@
 import React from "react";
 import { FloatingMenu as TipTapFloatingMenu } from "@tiptap/react";
-import { cn } from "@/lib/utils";
+import { cn } from "@alphonse/ui";
 
 type FloatingMenuProps = {
   editor: any;
