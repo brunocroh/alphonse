@@ -9,10 +9,16 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@alphonse/configs": "workspace:^",
     "@repo/ui": "workspace:*",
+    "alphonse": "workspace:^",
+    "autoprefixer": "^10.4.17",
     "next": "^14.0.4",
+    "postcss": "^8.4.35",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",
