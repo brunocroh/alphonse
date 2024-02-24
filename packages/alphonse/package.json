@@ -1,6 +1,6 @@
 {
   "name": "alphonse",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@tiptap/extension-document": "^2.2.4",
+    "@tiptap/extension-heading": "^2.2.4",
+    "@tiptap/extension-paragraph": "^2.2.4",
+    "@tiptap/extension-text": "^2.2.4",
+    "@tiptap/react": "^2.2.4",
+    "react": "^18.2.0"
+  }
 }
