@@ -2,6 +2,7 @@
   "name": "alphonse-web-app",
   "version": "0.0.0",
   "private": true,
+  "main": "app/page.tsx",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

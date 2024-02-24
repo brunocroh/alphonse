@@ -1,4 +1,6 @@
-"use client";
+import "@alphonse/ui/globals.css";
+
+import "./global.css";
 
 import { EditorContent, useEditor } from "@tiptap/react";
 import Document from "@tiptap/extension-document";
@@ -6,8 +8,8 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Heading from "@tiptap/extension-heading";
 import React from "react";
-import { Card, CardContent, CardHeader } from "@alphonse/ui/components/ui/card";
-import { FloatingMenu, BubbleMenu } from "./extensions";
+import { Card, CardContent, CardHeader, Button } from "@alphonse/ui";
+import { FloatingMenu, BubbleMenu } from "./extensions/index";
 
 const AlchemyEditor = () => {
   const editor = useEditor({
@@ -40,7 +42,7 @@ const AlchemyEditor = () => {
     <>
       <BubbleMenu editor={editor} />
       <FloatingMenu editor={editor} />
-      <Card className="w-full">
+      <Card className="w-full bg-red-500">
         <CardHeader>
           <div>
             <input
@@ -51,6 +53,7 @@ const AlchemyEditor = () => {
             Editable
           </div>
         </CardHeader>
+        <Button>Teste</Button>
         <CardContent>
           <EditorContent editor={editor} />
         </CardContent>

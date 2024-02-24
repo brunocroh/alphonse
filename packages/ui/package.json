@@ -4,9 +4,9 @@
   "private": true,
   "exports": {
     ".": "./src/index.ts",
-    "./globals.css": "./src/globals.css",
+    "./globals.css": "./globals.css",
     "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/*.tsx"
+    "./components/*": "./src/components/ui/*.tsx"
   },
   "scripts": {
     "build": "tsup src/index.ts",
