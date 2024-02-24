@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@alphonse/configs": "workspace:^",
-    "@repo/ui": "workspace:*",
+    "@alphonse/ui": "workspace:*",
     "alphonse": "workspace:^",
     "autoprefixer": "^10.4.17",
     "next": "^14.0.4",

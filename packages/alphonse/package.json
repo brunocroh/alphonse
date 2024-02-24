@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@alphonse/ui": "workspace:^",
     "@tiptap/extension-document": "^2.2.4",
     "@tiptap/extension-heading": "^2.2.4",
     "@tiptap/extension-paragraph": "^2.2.4",
