@@ -25,10 +25,14 @@
   "license": "ISC",
   "dependencies": {
     "@alphonse/ui": "workspace:^",
+    "@tiptap/extension-bold": "^2.2.4",
     "@tiptap/extension-document": "^2.2.4",
     "@tiptap/extension-heading": "^2.2.4",
+    "@tiptap/extension-italic": "^2.2.4",
     "@tiptap/extension-paragraph": "^2.2.4",
+    "@tiptap/extension-strike": "^2.2.4",
     "@tiptap/extension-text": "^2.2.4",
+    "@tiptap/extension-underline": "^2.2.4",
     "@tiptap/react": "^2.2.4"
   },
   "devDependencies": {
