@@ -1,15 +1,41 @@
 import { BubbleMenu as TipTapBubbleMenu } from "@tiptap/react";
-import {
-  Button,
-  Menubar,
-  MenubarMenu,
-  MenubarTrigger,
-  Separator,
-} from "@alphonse/ui";
+import { Button, Menubar, MenubarMenu } from "@alphonse/ui";
+import React from "react";
+import { cn } from "@alphonse/ui";
 
 type BubbleMenuProps = {
   editor: any;
 };
+
+type MenuItemProps = {
+  isActive?: boolean;
+  onClick: () => void;
+  className?: string;
+  children: React.ReactNode;
+};
+
+function MenuItem({
+  isActive,
+  onClick,
+  className,
+  children,
+  ...props
+}: MenuItemProps) {
+  console.log({ isActive });
+  return (
+    <Button
+      variant="ghost"
+      onClick={onClick}
+      className={cn(
+        isActive ? "text-destructive hover:text-destructive" : "",
+        "p-2 h-8",
+      )}
+      {...props}
+    >
+      {children}
+    </Button>
+  );
+}
 
 export function BubbleMenu({ editor }: BubbleMenuProps) {
   if (!editor) return null;
@@ -18,34 +44,30 @@ export function BubbleMenu({ editor }: BubbleMenuProps) {
     <TipTapBubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
       <Menubar className="space-x-0 p-0 h-8">
         <MenubarMenu>
-          <Button
-            variant="ghost"
-            className="p-2 h-8"
+          <MenuItem
+            isActive={editor.isActive("bold")}
             onClick={() => editor.chain().focus().toggleBold().run()}
           >
             B
-          </Button>
-          <Button
-            variant="ghost"
-            className="p-2 h-8"
+          </MenuItem>
+          <MenuItem
+            isActive={editor.isActive("italic")}
             onClick={() => editor.chain().focus().toggleItalic().run()}
           >
             I
-          </Button>
-          <Button
-            variant="ghost"
-            className="p-2 h-8"
+          </MenuItem>
+          <MenuItem
+            isActive={editor.isActive("strike")}
             onClick={() => editor.chain().focus().toggleStrike().run()}
           >
             S
-          </Button>
-          <Button
-            variant="ghost"
-            className="p-2 h-8"
+          </MenuItem>
+          <MenuItem
+            isActive={editor.isActive("underline")}
             onClick={() => editor.chain().focus().toggleUnderline().run()}
           >
             U
-          </Button>
+          </MenuItem>
         </MenubarMenu>
       </Menubar>
     </TipTapBubbleMenu>
