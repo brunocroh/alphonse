@@ -7,7 +7,7 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Text from "@tiptap/extension-text";
 import Heading from "@tiptap/extension-heading";
 import React from "react";
-import { Card, CardContent, CardHeader, Button } from "@alphonse/ui";
+import { Card, CardContent, CardHeader } from "@alphonse/ui";
 import { FloatingMenu, BubbleMenu } from "./extensions/index";
 
 const AlchemyEditor = () => {
@@ -52,7 +52,6 @@ const AlchemyEditor = () => {
             Editable
           </div>
         </CardHeader>
-        <Button>Teste</Button>
         <CardContent>
           <EditorContent editor={editor} />
         </CardContent>
