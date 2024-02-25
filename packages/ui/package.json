@@ -7,7 +7,8 @@
     "./globals.css": "./globals.css"
   },
   "scripts": {
-    "build": "tsup src/index.ts",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
     "ui:add": "pnpm --filter @alphonse/ui ui:add"
   },
