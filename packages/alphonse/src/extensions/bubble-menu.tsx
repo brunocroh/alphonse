@@ -7,7 +7,6 @@ type BubbleMenuProps = {
 
 export function BubbleMenu({ editor }: BubbleMenuProps) {
   if (!editor) return null;
-  console.log({ editor });
 
   return (
     <TipTapBubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
