@@ -21,7 +21,6 @@ function MenuItem({
   children,
   ...props
 }: MenuItemProps) {
-  console.log({ isActive });
   return (
     <Button
       variant="ghost"
