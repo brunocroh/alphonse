@@ -157,6 +157,9 @@ importers:
       '@tiptap/react':
         specifier: ^2.2.4
         version: 2.2.4(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)(react-dom@18.2.0)(react@18.2.0)
+      lucide-react:
+        specifier: ^0.338.0
+        version: 0.338.0(react@18.2.0)
     devDependencies:
       '@types/react':
         specifier: ^18.2.46

@@ -33,7 +33,8 @@
     "@tiptap/extension-strike": "^2.2.4",
     "@tiptap/extension-text": "^2.2.4",
     "@tiptap/extension-underline": "^2.2.4",
-    "@tiptap/react": "^2.2.4"
+    "@tiptap/react": "^2.2.4",
+    "lucide-react": "^0.338.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.46",

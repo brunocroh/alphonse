@@ -2,6 +2,7 @@ import { BubbleMenu as TipTapBubbleMenu } from "@tiptap/react";
 import { Button, Menubar, MenubarMenu } from "@alphonse/ui";
 import React from "react";
 import { cn } from "@alphonse/ui";
+import { Bold, Italic, Strikethrough, Underline } from "lucide-react";
 
 type BubbleMenuProps = {
   editor: any;
@@ -47,25 +48,25 @@ export function BubbleMenu({ editor }: BubbleMenuProps) {
             isActive={editor.isActive("bold")}
             onClick={() => editor.chain().focus().toggleBold().run()}
           >
-            B
+            <Bold size={12} />
           </MenuItem>
           <MenuItem
             isActive={editor.isActive("italic")}
             onClick={() => editor.chain().focus().toggleItalic().run()}
           >
-            I
+            <Italic size={12} />
           </MenuItem>
           <MenuItem
             isActive={editor.isActive("strike")}
             onClick={() => editor.chain().focus().toggleStrike().run()}
           >
-            S
+            <Strikethrough size={12} />
           </MenuItem>
           <MenuItem
             isActive={editor.isActive("underline")}
             onClick={() => editor.chain().focus().toggleUnderline().run()}
           >
-            U
+            <Underline size={12} />
           </MenuItem>
         </MenubarMenu>
       </Menubar>
