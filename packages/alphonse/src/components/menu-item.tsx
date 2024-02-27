@@ -19,7 +19,7 @@ export function MenuItem({
       variant="ghost"
       onClick={onClick}
       className={cn(
-        isActive ? "text-destructive hover:text-destructive" : "",
+        isActive ? "text-primary hover:text-primary" : "",
         "p-2 h-8",
       )}
       {...props}

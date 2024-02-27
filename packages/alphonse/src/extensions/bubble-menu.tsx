@@ -17,25 +17,25 @@ export function BubbleMenu({ editor }: BubbleMenuProps) {
           isActive={editor.isActive("bold")}
           onClick={() => editor.chain().focus().toggleBold().run()}
         >
-          <Bold size={12} />
+          <Bold strokeWidth={3} size={12} />
         </MenuItem>
         <MenuItem
           isActive={editor.isActive("italic")}
           onClick={() => editor.chain().focus().toggleItalic().run()}
         >
-          <Italic size={12} />
+          <Italic strokeWidth={3} size={12} />
         </MenuItem>
         <MenuItem
           isActive={editor.isActive("strike")}
           onClick={() => editor.chain().focus().toggleStrike().run()}
         >
-          <Strikethrough size={12} />
+          <Strikethrough strokeWidth={3} size={12} />
         </MenuItem>
         <MenuItem
           isActive={editor.isActive("underline")}
           onClick={() => editor.chain().focus().toggleUnderline().run()}
         >
-          <Underline size={12} />
+          <Underline strokeWidth={3} size={12} />
         </MenuItem>
       </MenuBar>
     </TipTapBubbleMenu>
