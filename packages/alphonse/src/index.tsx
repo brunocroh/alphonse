@@ -1,4 +1,3 @@
-import "@alphonse/ui/globals.css";
 import "./globals.css";
 import "./prosemirror.css";
 
