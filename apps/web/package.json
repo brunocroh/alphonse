@@ -1,5 +1,5 @@
 {
-  "name": "alphonse-web-app",
+  "name": "web",
   "version": "0.0.0",
   "private": true,
   "main": "app/page.tsx",
