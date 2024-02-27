@@ -4,10 +4,9 @@ import { MenuItem } from "../components/menu-item";
 
 type FloatingMenuProps = {
   editor: any;
-  className?: string;
 };
 
-export function FloatingMenu({ editor, className }: FloatingMenuProps) {
+export function FloatingMenu({ editor }: FloatingMenuProps) {
   if (!editor) return null;
 
   return (
@@ -32,6 +31,16 @@ export function FloatingMenu({ editor, className }: FloatingMenuProps) {
           }
         >
           h2
+        </MenuItem>
+        <MenuItem
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 3 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 3 }) ? "is-active" : ""
+          }
+        >
+          h3
         </MenuItem>
         <MenuItem
           onClick={() => editor.chain().focus().toggleBulletList().run()}
