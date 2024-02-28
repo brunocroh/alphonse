@@ -31,7 +31,7 @@ const AlchemyEditor = () => {
     editorProps: {
       attributes: {
         class:
-          "prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
+          "border-input shadow-lg prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
       },
     },
     content: "<p>Hello World! 🌎️</p>",
@@ -49,7 +49,7 @@ const AlchemyEditor = () => {
     <>
       <BubbleMenu editor={editor} />
       <FloatingMenu editor={editor} />
-      <Card className="w-full">
+      <Card className="w-full border-input">
         <CardHeader>
           <div>
             <input

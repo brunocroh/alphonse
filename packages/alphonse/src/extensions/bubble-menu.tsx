@@ -2,6 +2,7 @@ import { BubbleMenu as TipTapBubbleMenu } from "@tiptap/react";
 import { Bold, Italic, Strikethrough, Underline } from "lucide-react";
 import { MenuItem } from "../components/menu-item";
 import { MenuBar } from "../components/menu-bar";
+import { Separator } from "@alphonse/ui";
 
 type BubbleMenuProps = {
   editor: any;
