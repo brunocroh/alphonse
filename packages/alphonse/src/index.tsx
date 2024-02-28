@@ -31,7 +31,7 @@ const AlchemyEditor = () => {
     editorProps: {
       attributes: {
         class:
-          "border-input shadow-lg prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
+          "border-input prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
       },
     },
     content: "<p>Hello World! 🌎️</p>",
