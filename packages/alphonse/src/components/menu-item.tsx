@@ -17,10 +17,11 @@ export function MenuItem({
   return (
     <Button
       variant="ghost"
+      aria-checked={isActive}
       onClick={onClick}
       className={cn(
         isActive ? "text-primary hover:text-primary" : "",
-        "p-2 h-8",
+        "p-2 h-8 aria-checked:text-primary hover:text-primary",
       )}
       {...props}
     >

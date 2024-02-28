@@ -1,5 +1,5 @@
 import { FloatingMenu as TipTapFloatingMenu } from "@tiptap/react";
-import { MenuBar } from "../components/menu-bar-";
+import { MenuBar } from "../components/menu-bar";
 import { MenuItem } from "../components/menu-item";
 
 type FloatingMenuProps = {
