@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
-import { Editor } from "./components/Editor";
-import { ThemeSwitcher } from "../components/theme-switcher";
+import { Editor } from "./components/editor";
+import { ThemeSwitcher } from "./components/theme-switcher";
 
 export default async function Page(): Promise<JSX.Element> {
   return (
