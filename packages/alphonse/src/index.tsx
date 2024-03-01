@@ -1,4 +1,3 @@
-import "./globals.css";
 import "./prosemirror.css";
 
 import { EditorContent, useEditor } from "@tiptap/react";
