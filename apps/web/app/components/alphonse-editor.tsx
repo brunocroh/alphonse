@@ -3,7 +3,7 @@
 import React from "react"
 import Alphonse from "alphonse"
 
-export const Editor = (props: {}) => {
+export const Editor = () => {
   return (
     <>
       <Alphonse />

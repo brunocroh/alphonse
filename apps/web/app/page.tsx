@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import { Editor } from "./components/editor"
+import { Editor } from "./components/alphonse-editor"
 import { ThemeSwitcher } from "./components/theme-switcher"
 
 export default async function Page(): Promise<JSX.Element> {
