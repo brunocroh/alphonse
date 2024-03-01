@@ -1,4 +1,3 @@
-import "alphonse/dist/index.css";
 import "./globals.css";
 
 import type { Metadata } from "next";
