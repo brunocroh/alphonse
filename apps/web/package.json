@@ -10,7 +10,6 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
-    "@alphonse/configs": "workspace:^",
     "@alphonse/ui": "workspace:*",
     "alphonse": "workspace:^",
     "autoprefixer": "^10.4.17",
@@ -24,8 +23,10 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@alphonse/configs": "workspace:^",
+    "@alphonse/eslint-config": "workspace:^",
+    "@alphonse/prettier-config": "workspace:^",
     "@next/eslint-plugin-next": "^14.0.4",
-    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/eslint": "^8.56.1",
     "@types/node": "^20.10.6",
