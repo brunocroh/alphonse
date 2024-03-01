@@ -1,26 +1,25 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { useTheme } from "next-themes";
-
+import * as React from "react"
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  Button,
-} from "@alphonse/ui";
-import { Moon, Sun } from "lucide-react";
+} from "@alphonse/ui"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
 
 export function ThemeSwitcher() {
-  const { setTheme } = useTheme();
+  const { setTheme } = useTheme()
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <Sun className="h-[1rem] w-[1rem] rotate-0 scale-100 transition-all text-black dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1rem] w-[1rem] rotate-90 scale-0 transition-al text-primary text-white dark:rotate-0 dark:scale-100" />
+          <Sun className="size-[1rem] rotate-0 scale-100 text-black transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="transition-al text-primary absolute size-[1rem] rotate-90 scale-0 text-white dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
@@ -36,5 +35,5 @@ export function ThemeSwitcher() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import Alphonse from "alphonse";
-import React from "react";
+import React from "react"
+import Alphonse from "alphonse"
 
 export const Editor = (props: {}) => {
   return (
     <>
       <Alphonse />
     </>
-  );
-};
+  )
+}

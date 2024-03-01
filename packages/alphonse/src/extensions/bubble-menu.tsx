@@ -1,15 +1,16 @@
-import { BubbleMenu as TipTapBubbleMenu } from "@tiptap/react";
-import { Bold, Italic, Strikethrough, Underline } from "lucide-react";
-import { MenuItem } from "../components/menu-item";
-import { MenuBar } from "../components/menu-bar";
-import { Separator } from "@alphonse/ui";
+import { Separator } from "@alphonse/ui"
+import { BubbleMenu as TipTapBubbleMenu } from "@tiptap/react"
+import { Bold, Italic, Strikethrough, Underline } from "lucide-react"
+
+import { MenuBar } from "../components/menu-bar"
+import { MenuItem } from "../components/menu-item"
 
 type BubbleMenuProps = {
-  editor: any;
-};
+  editor: any
+}
 
 export function BubbleMenu({ editor }: BubbleMenuProps) {
-  if (!editor) return null;
+  if (!editor) return null
 
   return (
     <TipTapBubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
@@ -40,5 +41,5 @@ export function BubbleMenu({ editor }: BubbleMenuProps) {
         </MenuItem>
       </MenuBar>
     </TipTapBubbleMenu>
-  );
+  )
 }

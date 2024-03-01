@@ -1,17 +1,18 @@
-import "./prosemirror.css";
+import "./prosemirror.css"
 
-import { EditorContent, useEditor } from "@tiptap/react";
-import Document from "@tiptap/extension-document";
-import Paragraph from "@tiptap/extension-paragraph";
-import Text from "@tiptap/extension-text";
-import Heading from "@tiptap/extension-heading";
-import Underline from "@tiptap/extension-underline";
-import Strike from "@tiptap/extension-strike";
-import Bold from "@tiptap/extension-bold";
-import Italic from "@tiptap/extension-italic";
-import React from "react";
-import { Card, CardContent, CardHeader } from "@alphonse/ui";
-import { FloatingMenu, BubbleMenu } from "./extensions/index";
+import React from "react"
+import { Card, CardContent, CardHeader } from "@alphonse/ui"
+import Bold from "@tiptap/extension-bold"
+import Document from "@tiptap/extension-document"
+import Heading from "@tiptap/extension-heading"
+import Italic from "@tiptap/extension-italic"
+import Paragraph from "@tiptap/extension-paragraph"
+import Strike from "@tiptap/extension-strike"
+import Text from "@tiptap/extension-text"
+import Underline from "@tiptap/extension-underline"
+import { EditorContent, useEditor } from "@tiptap/react"
+
+import { BubbleMenu, FloatingMenu } from "./extensions/index"
 
 const AlchemyEditor = () => {
   const editor = useEditor({
@@ -34,15 +35,15 @@ const AlchemyEditor = () => {
       },
     },
     content: "<p>Hello World! 🌎️</p>",
-  });
+  })
 
-  const [isEditable, setIsEditable] = React.useState(true);
+  const [isEditable, setIsEditable] = React.useState(true)
 
   React.useEffect(() => {
     if (editor) {
-      editor.setEditable(isEditable);
+      editor.setEditable(isEditable)
     }
-  }, [isEditable, editor]);
+  }, [isEditable, editor])
 
   return (
     <>
@@ -64,7 +65,7 @@ const AlchemyEditor = () => {
         </CardContent>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default AlchemyEditor;
+export default AlchemyEditor

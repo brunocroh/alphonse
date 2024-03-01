@@ -1,13 +1,14 @@
-import { FloatingMenu as TipTapFloatingMenu } from "@tiptap/react";
-import { MenuBar } from "../components/menu-bar";
-import { MenuItem } from "../components/menu-item";
+import { FloatingMenu as TipTapFloatingMenu } from "@tiptap/react"
+
+import { MenuBar } from "../components/menu-bar"
+import { MenuItem } from "../components/menu-item"
 
 type FloatingMenuProps = {
-  editor: any;
-};
+  editor: any
+}
 
 export function FloatingMenu({ editor }: FloatingMenuProps) {
-  if (!editor) return null;
+  if (!editor) return null
 
   return (
     <TipTapFloatingMenu editor={editor} tippyOptions={{ duration: 100 }}>
@@ -50,5 +51,5 @@ export function FloatingMenu({ editor }: FloatingMenuProps) {
         </MenuItem>
       </MenuBar>
     </TipTapFloatingMenu>
-  );
+  )
 }

@@ -10,12 +10,11 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "ui:add": "pnpm --filter @alphonse/ui ui:add"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "@alphonse/eslint-config": "workspace:^",
-    "@alphonse/prettier-config": "workspace:^",
     "@turbo/gen": "^1.11.3",
     "@types/eslint": "^8.56.1",
     "@types/node": "^20.10.6",
@@ -56,7 +55,6 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "alphonse": "workspace:^",
     "autoprefixer": "^10.4.17",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",

@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write \"app/**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
   "dependencies": {
     "@alphonse/ui": "workspace:*",
@@ -24,8 +25,6 @@
   },
   "devDependencies": {
     "@alphonse/configs": "workspace:^",
-    "@alphonse/eslint-config": "workspace:^",
-    "@alphonse/prettier-config": "workspace:^",
     "@next/eslint-plugin-next": "^14.0.4",
     "@repo/typescript-config": "workspace:*",
     "@types/eslint": "^8.56.1",
