@@ -1,5 +1,6 @@
 import { cn, Button, Menubar, Popover, PopoverTrigger, PopoverContent } from "@alphonse/ui"
 import { useEditor } from "@tiptap/react"
+import { ChevronDown } from "lucide-react"
 
 type MenuItemProps = {
   isActive?: boolean
@@ -10,7 +11,7 @@ type MenuItemProps = {
 
 export function Menu({ children }: { children: React.ReactNode }) {
   return (
-    <Menubar className="border-input h-8 space-x-0 px-0 py-4 shadow-lg">
+    <Menubar className="border-input h-8 space-x-0 px-0 shadow-lg">
       {children}
     </Menubar>
   )
@@ -54,10 +55,14 @@ export function MenuSelectItem({children}: MenuSelectItem) {
   )
 }
 
-export function MenuSelect({activeOption, options, onClick}: MenuSelect) {
+export function MenuSelect({activeOption, options}: MenuSelect) {
   return (
     <Popover>
-      <PopoverTrigger>{activeOption}</PopoverTrigger>
+      <PopoverTrigger className="hover:bg-secondary flex h-8 flex-row items-center p-2">
+        {activeOption}
+        <ChevronDown strokeWidth={1} className="color-input" />
+
+      </PopoverTrigger>
       <PopoverContent className="border-input mt-1 flex flex-col">
         {options.map((option) => (
            <MenuSelectItem key={option} onClick={() => onClick(option)}>{option}</MenuSelectItem>

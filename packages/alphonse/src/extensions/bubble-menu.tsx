@@ -3,6 +3,7 @@ import { Bold, Italic, Strikethrough, Underline } from "lucide-react"
 
 import { Menu, MenuSelect, MenuItem } from "../components/menu-bar"
 import { useMemo } from "react"
+import { Separator } from "@alphonse/ui"
 
 type BubbleMenuProps = {
   editor?: Editor
@@ -28,6 +29,7 @@ export function BubbleMenu({ editor }: BubbleMenuProps) {
     <TipTapBubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
       <Menu>
         <MenuSelect options={availableExtensions} activeOption={'Paragraph'} />
+        <Separator orientation="vertical"/>
         <MenuItem
           isActive={editor.isActive("bold")}
           onClick={() => editor.chain().focus().toggleBold().run()}
