@@ -1,12 +1,18 @@
 "use client"
 
 import React from "react"
-import Alphonse from "alphonse"
+import {AlphonseProvider, AlphonseEditorProvider, AlphonseEditor} from "alphonse"
+
+const content = "<p>Hello World! 🌎️</p>"
 
 export const Editor = () => {
   return (
     <>
-      <Alphonse />
+      <AlphonseProvider>
+        <AlphonseEditorProvider content={content} >
+          <AlphonseEditor />
+        </AlphonseEditorProvider>
+      </AlphonseProvider>
     </>
   )
 }

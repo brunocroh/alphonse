@@ -10,62 +10,75 @@ import Paragraph from "@tiptap/extension-paragraph"
 import Strike from "@tiptap/extension-strike"
 import Text from "@tiptap/extension-text"
 import Underline from "@tiptap/extension-underline"
-import { EditorContent, useEditor } from "@tiptap/react"
+import { useCurrentEditor, EditorProvider } from "@tiptap/react"
 
 import { BubbleMenu, FloatingMenu } from "./extensions/index"
 
-const AlchemyEditor = () => {
-  const editor = useEditor({
-    extensions: [
-      Document,
-      Paragraph,
-      Text,
-      Heading.configure({
-        levels: [1, 2, 3],
-      }),
-      Underline,
-      Strike,
-      Bold,
-      Italic,
-    ],
-    editorProps: {
-      attributes: {
-        class:
-          "border-input prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
-      },
-    },
-    content: "<p>Hello World! 🌎️</p>",
-  })
+export const extensions = [
+  Document,
+  Paragraph,
+  Text,
+  Heading.configure({
+    levels: [1, 2, 3],
+  }),
+  Underline,
+  Strike,
+  Bold,
+  Italic,
+]
 
-  const [isEditable, setIsEditable] = React.useState(true)
+export const defaultEditorProps = {
+  attributes: {
+    class:
+    "border-input prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none",
+  },
+}
 
-  React.useEffect(() => {
-    if (editor) {
-      editor.setEditable(isEditable)
-    }
-  }, [isEditable, editor])
+type AlphonseEditor = {
+  children: React.ReactNode,
+  content: any
+}
 
+export const AlphonseProvider: React.FC<any> = ({children}) => {
+  return (
+    <div>
+      {children}
+    </div>
+  )
+}
+
+type AlphonseEditorProvider = {
+  children: React.ReactNode
+  extensions: any;
+  content: string;
+  editorProps: any;
+}
+
+export const AlphonseEditorProvider: React.FC<AlphonseEditorProvider> = ({children, editorProps, content}) => {
+  return (
+    <Card className="border-input w-full">
+      <CardHeader>
+        <div>
+          Alphonse Editor
+        </div>
+      </CardHeader>
+      <EditorProvider extensions={extensions} content={content} editorProps={editorProps || defaultEditorProps}>
+        <CardContent>
+          {children}
+        </CardContent>
+      </EditorProvider>
+    </Card>
+  )
+}
+
+export const AlphonseEditor = ({children}: AlphonseEditor) => {
+  const {editor} = useCurrentEditor()
+  if(!editor) return null
   return (
     <>
       <BubbleMenu editor={editor} />
       <FloatingMenu editor={editor} />
-      <Card className="w-full border-input">
-        <CardHeader>
-          <div>
-            <input
-              type="checkbox"
-              checked={isEditable}
-              onChange={() => setIsEditable(!isEditable)}
-            />
-            Editable
-          </div>
-        </CardHeader>
-        <CardContent>
-          <EditorContent editor={editor} />
-        </CardContent>
-      </Card>
+      {children}
     </>
   )
 }
-
-export default AlchemyEditor
