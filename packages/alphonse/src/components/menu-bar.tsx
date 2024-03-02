@@ -58,9 +58,11 @@ type MenuSelect = {
 export function MenuSelect({activeOption, children}: MenuSelect) {
   return (
     <Popover>
-      <PopoverTrigger className="hover:bg-secondary flex h-8 flex-row items-center p-2">
-        {activeOption}
-        <ChevronDown strokeWidth={1} className="color-input" />
+      <PopoverTrigger className="hover:bg-secondary flex h-8 flex-row items-center space-x-2 p-2 text-sm">
+        <span>
+          {activeOption}
+        </span>
+        <ChevronDown strokeWidth={1} className="color-input" size={14} />
 
       </PopoverTrigger>
       <PopoverContent align="start" className="border-input flex flex-col space-y-1">

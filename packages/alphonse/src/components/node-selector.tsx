@@ -39,7 +39,7 @@ export function NodeSelector() {
   const activeNode = nodes.find(node => node.isActive(editor))
 
   return (
-    <MenuSelect activeOption={activeNode?.name || 'Select a node'}>
+    <MenuSelect activeOption={activeNode?.name || 'Change'}>
       {nodes.map((node) => (
         <div className="hover:bg-secondary flex flex-row items-center space-x-2 rounded-md px-2 py-1 hover:cursor-pointer" key={node.name} onClick={() => node.toggle(editor)}>
           <div className="text-primary bg-secondary border-secondary rounded-md p-1">
