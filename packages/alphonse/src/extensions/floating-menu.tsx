@@ -1,7 +1,6 @@
 import { FloatingMenu as TipTapFloatingMenu } from "@tiptap/react"
 
-import { MenuBar } from "../components/menu-bar"
-import { MenuItem } from "../components/menu-item"
+import { Menu, MenuItem } from "../components/menu-bar"
 
 type FloatingMenuProps = {
   editor: any
@@ -12,7 +11,7 @@ export function FloatingMenu({ editor }: FloatingMenuProps) {
 
   return (
     <TipTapFloatingMenu editor={editor} tippyOptions={{ duration: 100 }}>
-      <MenuBar>
+      <Menu>
         <MenuItem
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 1 }).run()
@@ -49,7 +48,7 @@ export function FloatingMenu({ editor }: FloatingMenuProps) {
         >
           bullet list
         </MenuItem>
-      </MenuBar>
+      </Menu>
     </TipTapFloatingMenu>
   )
 }
