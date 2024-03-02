@@ -34,10 +34,6 @@ export const defaultEditorProps = {
   },
 }
 
-type AlphonseEditor = {
-  children: React.ReactNode,
-  content: any
-}
 
 export const AlphonseProvider: React.FC<any> = ({children}) => {
   return (
@@ -49,9 +45,9 @@ export const AlphonseProvider: React.FC<any> = ({children}) => {
 
 type AlphonseEditorProvider = {
   children: React.ReactNode
-  extensions: any;
+  extensions?: any;
   content: string;
-  editorProps: any;
+  editorProps?: any;
 }
 
 export const AlphonseEditorProvider: React.FC<AlphonseEditorProvider> = ({children, editorProps, content}) => {
@@ -71,7 +67,11 @@ export const AlphonseEditorProvider: React.FC<AlphonseEditorProvider> = ({childr
   )
 }
 
-export const AlphonseEditor = ({children}: AlphonseEditor) => {
+type AlphonseEditor = {
+  children?: React.ReactNode,
+}
+
+export const AlphonseEditor: React.FC<AlphonseEditor> = ({children}) => {
   const {editor} = useCurrentEditor()
   if(!editor) return null
   return (

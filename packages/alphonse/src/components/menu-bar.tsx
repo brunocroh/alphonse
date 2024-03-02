@@ -65,7 +65,7 @@ export function MenuSelect({activeOption, options}: MenuSelect) {
       </PopoverTrigger>
       <PopoverContent className="border-input mt-1 flex flex-col">
         {options.map((option) => (
-           <MenuSelectItem key={option} onClick={() => onClick(option)}>{option}</MenuSelectItem>
+           <MenuSelectItem key={option}>{option}</MenuSelectItem>
         ))}
       </PopoverContent>
     </Popover>
