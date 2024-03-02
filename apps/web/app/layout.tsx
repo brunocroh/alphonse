@@ -1,3 +1,4 @@
+import "alphonse/styles.css"
 import "./globals.css"
 
 import type { Metadata } from "next"

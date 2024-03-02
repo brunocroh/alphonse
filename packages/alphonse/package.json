@@ -13,7 +13,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./styles.css": "./dist/index.css"
   },
   "scripts": {
     "build": "tsup",

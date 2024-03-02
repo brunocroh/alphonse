@@ -1,34 +1,21 @@
 import { Editor, BubbleMenu as TipTapBubbleMenu } from "@tiptap/react"
 import { Bold, Italic, Strikethrough, Underline } from "lucide-react"
 
-import { Menu, MenuSelect, MenuItem } from "../components/menu-bar"
-import { useMemo } from "react"
+import { Menu, MenuItem } from "../components/menu-bar"
 import { Separator } from "@alphonse/ui"
+import { NodeSelector } from "../components/node-selector"
 
 type BubbleMenuProps = {
   editor?: Editor
 }
 
 export function BubbleMenu({ editor }: BubbleMenuProps) {
-
-  const activeExtension = () => {
-
-  }
-
-  const availableExtensions = useMemo(() => {
-    if(!editor) return []
-    return editor.extensionManager.extensions
-      .filter(extension => extension.type === 'node')
-      .map(nodeExtension => nodeExtension.name);
-
-  }, [editor?.extensionManager?.extensions])
-
   if (!editor) return null
 
   return (
-    <TipTapBubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
+    <TipTapBubbleMenu editor={editor} tippyOptions={{ duration: 100, moveTransition: "transform 0.15s ease-out", }}>
       <Menu>
-        <MenuSelect options={availableExtensions} activeOption={'Paragraph'} />
+        <NodeSelector />
         <Separator orientation="vertical"/>
         <MenuItem
           isActive={editor.isActive("bold")}

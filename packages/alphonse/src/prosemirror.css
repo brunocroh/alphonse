@@ -4,11 +4,11 @@
 }
 
 .ProseMirror > h2 {
-  font-size: 1.5;
+  font-size: 1.5em;
   font-weight: 700;
 }
 
 .ProseMirror > h3 {
-  font-size: 1.2;
+  font-size: 1.2em;
   font-weight: 700;
 }
