@@ -106,7 +106,13 @@ importers:
       '@alphonse/ui':
         specifier: workspace:^
         version: link:../ui
+      '@tiptap/extension-blockquote':
+        specifier: ^2.2.4
+        version: 2.2.4(@tiptap/core@2.2.4)
       '@tiptap/extension-bold':
+        specifier: ^2.2.4
+        version: 2.2.4(@tiptap/core@2.2.4)
+      '@tiptap/extension-bullet-list':
         specifier: ^2.2.4
         version: 2.2.4(@tiptap/core@2.2.4)
       '@tiptap/extension-document':
@@ -116,6 +122,12 @@ importers:
         specifier: ^2.2.4
         version: 2.2.4(@tiptap/core@2.2.4)
       '@tiptap/extension-italic':
+        specifier: ^2.2.4
+        version: 2.2.4(@tiptap/core@2.2.4)
+      '@tiptap/extension-list-item':
+        specifier: ^2.2.4
+        version: 2.2.4(@tiptap/core@2.2.4)
+      '@tiptap/extension-ordered-list':
         specifier: ^2.2.4
         version: 2.2.4(@tiptap/core@2.2.4)
       '@tiptap/extension-paragraph':
@@ -133,9 +145,15 @@ importers:
       '@tiptap/react':
         specifier: ^2.2.4
         version: 2.2.4(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)(react-dom@18.2.0)(react@18.2.0)
+      install:
+        specifier: ^0.13.0
+        version: 0.13.0
       lucide-react:
         specifier: ^0.338.0
         version: 0.338.0(react@18.2.0)
+      npm:
+        specifier: ^10.5.0
+        version: 10.5.0
     devDependencies:
       '@types/react':
         specifier: ^18.2.46
@@ -2653,6 +2671,14 @@ packages:
       '@tiptap/pm': 2.2.4
     dev: false
 
+  /@tiptap/extension-blockquote@2.2.4(@tiptap/core@2.2.4):
+    resolution: {integrity: sha512-FrfPnn0VgVrUwWLwja1afX99JGLp6PE9ThVcmri+tLwUZQvTTVcCvHoCdOakav3/nge1+aV4iE3tQdyq1tWI9Q==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.2.4(@tiptap/pm@2.2.4)
+    dev: false
+
   /@tiptap/extension-bold@2.2.4(@tiptap/core@2.2.4):
     resolution: {integrity: sha512-v3tTLc8YESFZPOGj5ByFr8VbmQ/PTo49T1vsK50VubxIN/5r9cXlKH8kb3dZlZxCxJa3FrXNO/M8rdGBSWQvSg==}
     peerDependencies:
@@ -2670,6 +2696,14 @@ packages:
       '@tiptap/core': 2.2.4(@tiptap/pm@2.2.4)
       '@tiptap/pm': 2.2.4
       tippy.js: 6.3.7
+    dev: false
+
+  /@tiptap/extension-bullet-list@2.2.4(@tiptap/core@2.2.4):
+    resolution: {integrity: sha512-z/MPmW8bhRougMuorl6MAQBXeK4rhlP+jBWlNwT+CT8h5IkXqPnDbM1sZeagp2nYfVV6Yc4RWpzimqHHtGnYTA==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.2.4(@tiptap/pm@2.2.4)
     dev: false
 
   /@tiptap/extension-document@2.2.4(@tiptap/core@2.2.4):
@@ -2701,6 +2735,22 @@ packages:
 
   /@tiptap/extension-italic@2.2.4(@tiptap/core@2.2.4):
     resolution: {integrity: sha512-qIhGNvWnsQswSgEMRA8jQQjxfkOGNAuNWKEVQX9DPoqAUgknT41hQcAMP8L2+OdACpb2jbVMOO5Cy5Dof2L8/w==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.2.4(@tiptap/pm@2.2.4)
+    dev: false
+
+  /@tiptap/extension-list-item@2.2.4(@tiptap/core@2.2.4):
+    resolution: {integrity: sha512-lPLKGKsHpM9ClUa8n7GEUn8pG6HCYU0vFruIy3l2t6jZdHkrgBnYtVGMZ13K8UDnj/hlAlccxku0D0P4mA1Vrg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.2.4(@tiptap/pm@2.2.4)
+    dev: false
+
+  /@tiptap/extension-ordered-list@2.2.4(@tiptap/core@2.2.4):
+    resolution: {integrity: sha512-TpFy140O9Af1JciXt+xwqYUXxcJ6YG8zi/B5UDJujp+FH5sCmlYYBBnWxiFMhVaj6yEmA2eafu1qUkic/1X5Aw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
@@ -5149,6 +5199,11 @@ packages:
       wrap-ansi: 6.2.0
     dev: true
 
+  /install@0.13.0:
+    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
+    engines: {node: '>= 0.10'}
+    dev: false
+
   /internal-slot@1.0.6:
     resolution: {integrity: sha512-Xj6dv+PsbtwyPpEflsejS+oIZxmMlV44zAhG479uYu89MsjcYOhCFnNyKrkJrihbsiasQyY0afoCl/9BLR65bg==}
     engines: {node: '>= 0.4'}
@@ -5848,6 +5903,83 @@ packages:
     dependencies:
       path-key: 4.0.0
     dev: true
+
+  /npm@10.5.0:
+    resolution: {integrity: sha512-Ejxwvfh9YnWVU2yA5FzoYLTW52vxHCz+MHrOFg9Cc8IFgF/6f5AGPAvb5WTay5DIUP1NIfN3VBZ0cLlGO0Ys+A==}
+    engines: {node: ^18.17.0 || >=20.5.0}
+    hasBin: true
+    dev: false
+    bundledDependencies:
+      - '@isaacs/string-locale-compare'
+      - '@npmcli/arborist'
+      - '@npmcli/config'
+      - '@npmcli/fs'
+      - '@npmcli/map-workspaces'
+      - '@npmcli/package-json'
+      - '@npmcli/promise-spawn'
+      - '@npmcli/run-script'
+      - '@sigstore/tuf'
+      - abbrev
+      - archy
+      - cacache
+      - chalk
+      - ci-info
+      - cli-columns
+      - cli-table3
+      - columnify
+      - fastest-levenshtein
+      - fs-minipass
+      - glob
+      - graceful-fs
+      - hosted-git-info
+      - ini
+      - init-package-json
+      - is-cidr
+      - json-parse-even-better-errors
+      - libnpmaccess
+      - libnpmdiff
+      - libnpmexec
+      - libnpmfund
+      - libnpmhook
+      - libnpmorg
+      - libnpmpack
+      - libnpmpublish
+      - libnpmsearch
+      - libnpmteam
+      - libnpmversion
+      - make-fetch-happen
+      - minimatch
+      - minipass
+      - minipass-pipeline
+      - ms
+      - node-gyp
+      - nopt
+      - normalize-package-data
+      - npm-audit-report
+      - npm-install-checks
+      - npm-package-arg
+      - npm-pick-manifest
+      - npm-profile
+      - npm-registry-fetch
+      - npm-user-validate
+      - npmlog
+      - p-map
+      - pacote
+      - parse-conflict-json
+      - proc-log
+      - qrcode-terminal
+      - read
+      - semver
+      - spdx-expression-parse
+      - ssri
+      - supports-color
+      - tar
+      - text-table
+      - tiny-relative-date
+      - treeverse
+      - validate-npm-package-name
+      - which
+      - write-file-atomic
 
   /object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}

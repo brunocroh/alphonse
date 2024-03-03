@@ -10,6 +10,10 @@ import Paragraph from "@tiptap/extension-paragraph"
 import Strike from "@tiptap/extension-strike"
 import Text from "@tiptap/extension-text"
 import Underline from "@tiptap/extension-underline"
+import BlockQuote from "@tiptap/extension-blockquote"
+import OrderedList from "@tiptap/extension-ordered-list"
+import BulletList from "@tiptap/extension-bullet-list"
+import ListItem from "@tiptap/extension-list-item"
 import { useCurrentEditor, EditorProvider } from "@tiptap/react"
 
 import { BubbleMenu, FloatingMenu } from "./extensions/index"
@@ -21,6 +25,19 @@ export const extensions = [
   Heading.configure({
     levels: [1, 2, 3],
   }),
+  BlockQuote.configure({
+    HTMLAttributes: {
+      class: "border-l-4 border-primary",
+    },
+  }),
+  ListItem,
+  OrderedList.configure({
+    itemTypeName: 'listItem',
+  }),
+  BulletList.configure({
+    itemTypeName: 'listItem'
+  }),
+  BulletList,
   Underline,
   Strike,
   Bold,
