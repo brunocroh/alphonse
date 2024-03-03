@@ -15,10 +15,9 @@ import OrderedList from "@tiptap/extension-ordered-list"
 import BulletList from "@tiptap/extension-bullet-list"
 import ListItem from "@tiptap/extension-list-item"
 import Dropcursor from "@tiptap/extension-dropcursor"
-import DragNDrop from "./extensions/drag-n-drop"
 import { useCurrentEditor, EditorProvider } from "@tiptap/react"
 
-import { BubbleMenu, FloatingMenu } from "./extensions/index"
+import { BubbleMenu, DragAndDrop, PlaceholderExtension } from "./extensions/index"
 
 export const extensions = [
   Document,
@@ -61,7 +60,8 @@ export const extensions = [
   Strike,
   Bold,
   Italic,
-  DragNDrop,
+  DragAndDrop,
+  PlaceholderExtension,
   Dropcursor.configure({
     width: 8,
     color: 'hsl(var(--border))',
@@ -119,7 +119,6 @@ export const AlphonseEditor: React.FC<AlphonseEditor> = ({children}) => {
   return (
     <>
       <BubbleMenu editor={editor} />
-      <FloatingMenu editor={editor} />
       {children}
     </>
   )
