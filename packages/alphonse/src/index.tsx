@@ -21,18 +21,10 @@ import { BubbleMenu, DragAndDrop, PlaceholderExtension } from "./extensions/inde
 
 export const extensions = [
   Document,
-  Paragraph.configure({
-    HTMLAttributes: {
-      class: "my-1",
-    },
-  }),
+  Paragraph,
   Text,
   Heading.configure({
     levels: [1, 2, 3],
-    HTMLAttributes: {
-      class: "my-1",
-    },
-
   }),
   BlockQuote.configure({
     HTMLAttributes: {
