@@ -30,12 +30,22 @@ export const extensions = [
       class: "border-l-4 border-primary",
     },
   }),
-  ListItem,
+  ListItem.configure({
+    HTMLAttributes: {
+      class: "leading-normal",
+    },
+  }),
   OrderedList.configure({
     itemTypeName: 'listItem',
+    HTMLAttributes: {
+      class: "list-decimal my-0",
+    },
   }),
   BulletList.configure({
-    itemTypeName: 'listItem'
+    itemTypeName: 'listItem',
+    HTMLAttributes: {
+      class: "list-disc list-outside my-0",
+    },
   }),
   BulletList,
   Underline,

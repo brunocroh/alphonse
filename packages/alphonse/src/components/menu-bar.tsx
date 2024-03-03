@@ -65,7 +65,7 @@ export function MenuSelect({activeOption, children}: MenuSelect) {
         <ChevronDown strokeWidth={1} className="color-input" size={14} />
 
       </PopoverTrigger>
-      <PopoverContent align="start" className="border-input flex flex-col space-y-1">
+      <PopoverContent align="start" className="border-input flex w-52 flex-col space-y-1">
         {children}
       </PopoverContent>
     </Popover>

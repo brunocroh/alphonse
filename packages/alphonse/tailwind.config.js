@@ -68,5 +68,8 @@ module.exports = {
     },
   },
   purge: ["../ui/src/**/*.{js,jsx,ts,tsx}"],
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/typography'),
+  ],
 };

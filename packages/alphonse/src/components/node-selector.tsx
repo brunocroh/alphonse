@@ -1,5 +1,5 @@
 import { Editor, useCurrentEditor } from "@tiptap/react"
-import { Heading1, Heading2, Heading3, Text, TextQuote } from "lucide-react"
+import { Check, Heading1, Heading2, Heading3, List, ListOrdered, Text, TextQuote } from "lucide-react"
 
 import { MenuSelect } from "./menu-bar"
 
@@ -7,7 +7,11 @@ export const nodes = [
   {
     name: "Text",
     icon: Text,
-    isActive: (editor: Editor) => editor.isActive("paragraph") && !editor.isActive("blockquote"),
+    isActive: (editor: Editor) =>
+      editor.isActive("paragraph") &&
+      !editor.isActive("blockquote") &&
+      !editor.isActive("bulletList") &&
+      !editor.isActive("orderedList"),
     toggle: (editor: Editor) =>
       editor.chain().focus().toggleNode("paragraph", "paragraph").run(),
   },
@@ -44,6 +48,19 @@ export const nodes = [
         .toggleBlockquote()
         .run(),
   },
+  {
+    name: "Ordered List",
+    icon: ListOrdered,
+    isActive: (editor: Editor) => editor.isActive("orderedList"),
+    toggle: (editor: Editor) =>
+      editor.chain().focus().toggleOrderedList().run(),
+  },
+  {
+    name: "Bullet List",
+    icon: List,
+    isActive: (editor: Editor) => editor.isActive("bulletList"),
+    toggle: (editor: Editor) => editor.chain().focus().toggleBulletList().run(),
+  },
 ]
 
 export function NodeSelector() {
@@ -57,14 +74,19 @@ export function NodeSelector() {
     <MenuSelect activeOption={activeNode?.name || "Change"}>
       {nodes.map((node) => (
         <div
-          className="hover:bg-secondary flex flex-row items-center space-x-2 rounded-md px-2 py-1 hover:cursor-pointer"
+          className="hover:bg-secondary flex flex-row items-center justify-between  rounded-md px-2 py-1 hover:cursor-pointer"
           key={node.name}
           onClick={() => node.toggle(editor)}
         >
-          <div className="text-primary bg-secondary border-secondary rounded-md p-1">
-            <node.icon fill="currentColor" size={12} />
+          <div className="flex flex-row space-x-2">
+            <div className="text-primary bg-secondary border-secondary rounded-md p-1">
+              <node.icon fill="currentColor" size={12} />
+            </div>
+            <span className="text-sm">{node.name}</span>
           </div>
-          <span className="text-sm">{node.name}</span>
+          <div>
+            {node.isActive(editor) && <Check size={14} />}
+          </div>
         </div>
       ))}
     </MenuSelect>
