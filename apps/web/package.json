@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@alphonse/ui": "workspace:*",
+    "@tailwindcss/typography": "^0.5.10",
     "alphonse": "workspace:^",
     "autoprefixer": "^10.4.17",
     "lucide-react": "^0.338.0",
