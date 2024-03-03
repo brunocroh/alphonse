@@ -13,28 +13,28 @@ export const nodes = [
       !editor.isActive("bulletList") &&
       !editor.isActive("orderedList"),
     toggle: (editor: Editor) =>
-      editor.chain().focus().toggleNode("paragraph", "paragraph").run(),
+      editor.chain().focus().unsetBlockquote().toggleNode("paragraph", "paragraph").run(),
   },
   {
     name: "Heading 1",
     icon: Heading1,
     isActive: (editor: Editor) => editor.isActive("heading", { level: 1 }),
     toggle: (editor: Editor) =>
-      editor.chain().focus().toggleHeading({ level: 1 }).run(),
+      editor.chain().focus().unsetBlockquote().toggleHeading({ level: 1 }).run(),
   },
   {
     name: "Heading 2",
     icon: Heading2,
     isActive: (editor: Editor) => editor.isActive("heading", { level: 2 }),
     toggle: (editor: Editor) =>
-      editor.chain().focus().toggleHeading({ level: 2 }).run(),
+      editor.chain().focus().unsetBlockquote().toggleHeading({ level: 2 }).run(),
   },
   {
     name: "Heading 3",
     icon: Heading3,
     isActive: (editor: Editor) => editor.isActive("heading", { level: 3 }),
     toggle: (editor: Editor) =>
-      editor.chain().focus().toggleHeading({ level: 3 }).run(),
+      editor.chain().focus().unsetBlockquote().toggleHeading({ level: 3 }).run(),
   },
   {
     name: "Quote",
@@ -53,13 +53,13 @@ export const nodes = [
     icon: ListOrdered,
     isActive: (editor: Editor) => editor.isActive("orderedList"),
     toggle: (editor: Editor) =>
-      editor.chain().focus().toggleOrderedList().run(),
+      editor.chain().focus().clearNodes().toggleOrderedList().run(),
   },
   {
     name: "Bullet List",
     icon: List,
     isActive: (editor: Editor) => editor.isActive("bulletList"),
-    toggle: (editor: Editor) => editor.chain().focus().toggleBulletList().run(),
+    toggle: (editor: Editor) => editor.chain().focus().clearNodes().toggleBulletList().run(),
   },
 ]
 
