@@ -4,7 +4,7 @@ An open-source Notion-style WYSIWYG editor build with shadcn/ui and tailwind.
 
 ## Check the project
 
-[Alphonse Editor](https://alphonse-delta.vercel.app/)
+[Alphonse Editor online demo](https://alphonse-delta.vercel.app/)
 
 ## Instalation
 
