@@ -12,7 +12,7 @@ An open-source Notion-style WYSIWYG editor build with shadcn/ui and tailwind.
 npm install alphonse
 ```
 
-## usage
+## Usage
 
 ```jsx
 "use client";
