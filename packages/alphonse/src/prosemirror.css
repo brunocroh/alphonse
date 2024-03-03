@@ -60,3 +60,8 @@
   height: 0;
   pointer-events: none;
 }
+
+::selection {
+  background: hsl(var(--input));
+
+}
