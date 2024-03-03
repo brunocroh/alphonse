@@ -44,6 +44,7 @@
     "@tiptap/extension-underline": "^2.2.4",
     "@tiptap/pm": "^2.2.4",
     "@tiptap/react": "^2.2.4",
+    "@tiptap/suggestion": "^2.2.4",
     "install": "^0.13.0",
     "lucide-react": "^0.338.0",
     "npm": "^10.5.0"
