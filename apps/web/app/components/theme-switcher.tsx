@@ -32,14 +32,17 @@ export function ThemeSwitcher() {
           </span>
           {theme === 'light' && <Check size={12} />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")} className="flex flex-row justify-between ">
+        <DropdownMenuItem onClick={() => setTheme("dark")} className="flex flex-row justify-between">
           <span>
             Dark
           </span>
           {theme === 'dark' && <Check size={14} />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+        <DropdownMenuItem onClick={() => setTheme("system")} className="flex flex-row justify-between">
+          <span>
+            System
+          </span>
+          {theme !== 'dark' && theme !== 'light' && <Check size={14} />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
