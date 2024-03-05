@@ -18,8 +18,8 @@ export function ThemeSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
+      <DropdownMenuTrigger asChild className="transition-transform active:scale-95">
+        <Button variant="outline" size="icon" >
           <Sun className="size-[1rem] rotate-0 scale-100 text-black transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="transition-al text-primary absolute size-[1rem] rotate-90 scale-0 text-white dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
@@ -32,7 +32,7 @@ export function ThemeSwitcher() {
           </span>
           {theme === 'light' && <Check size={12} />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")} className="flex flex-row justify-between">
+        <DropdownMenuItem onClick={() => setTheme("dark")} className="flex flex-row justify-between ">
           <span>
             Dark
           </span>

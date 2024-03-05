@@ -11,7 +11,7 @@ export function GithubButton() {
 
   return (
     <Link href="https://github.com/brunocroh/alphonse">
-      <Button variant="outline" size="icon" className="text-black dark:text-white">
+      <Button variant="outline" size="icon" className="text-black transition-transform active:scale-95 dark:text-white">
         <Github color="currentColor" size={16} />
       </Button>
     </Link>
