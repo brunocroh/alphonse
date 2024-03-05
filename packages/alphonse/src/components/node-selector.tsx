@@ -1,5 +1,5 @@
 import { Editor, useCurrentEditor } from "@tiptap/react"
-import { Check, Heading1, Heading2, Heading3, List, ListOrdered, Text, TextQuote } from "lucide-react"
+import { Check, CheckSquare, CheckSquare2, Heading1, Heading2, Heading3, List, ListOrdered, Text, TextQuote } from "lucide-react"
 
 import { MenuSelect } from "./menu-bar"
 
@@ -63,7 +63,7 @@ export const nodes = [
   },
   {
     name: "To-do list",
-    icon: List,
+    icon: CheckSquare,
     isActive: (editor: Editor) => editor.isActive("taskItem"),
     toggle: (editor: Editor) => editor.chain().focus().clearNodes().toggleTaskList().run(),
   },
@@ -86,7 +86,7 @@ export function NodeSelector() {
         >
           <div className="flex flex-row space-x-2">
             <div className="text-primary bg-secondary border-secondary rounded-md p-1">
-              <node.icon fill="currentColor" size={12} />
+              <node.icon stroke="currentColor" size={12} />
             </div>
             <span className="text-sm">{node.name}</span>
           </div>
