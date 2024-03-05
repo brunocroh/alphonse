@@ -61,6 +61,12 @@ export const nodes = [
     isActive: (editor: Editor) => editor.isActive("bulletList"),
     toggle: (editor: Editor) => editor.chain().focus().clearNodes().toggleBulletList().run(),
   },
+  {
+    name: "To-do list",
+    icon: List,
+    isActive: (editor: Editor) => editor.isActive("taskItem"),
+    toggle: (editor: Editor) => editor.chain().focus().clearNodes().toggleTaskList().run(),
+  },
 ]
 
 export function NodeSelector() {

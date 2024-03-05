@@ -15,6 +15,8 @@ import OrderedList from "@tiptap/extension-ordered-list"
 import BulletList from "@tiptap/extension-bullet-list"
 import ListItem from "@tiptap/extension-list-item"
 import Dropcursor from "@tiptap/extension-dropcursor"
+import TaskItem from "@tiptap/extension-task-item"
+import TaskList from '@tiptap/extension-task-list'
 import { useCurrentEditor, EditorProvider } from "@tiptap/react"
 
 import { BubbleMenu, DragAndDrop, PlaceholderExtension } from "./extensions/index"
@@ -58,6 +60,12 @@ export const extensions = [
     width: 8,
     color: 'hsl(var(--border))',
     class: "rounded-lg"
+  }),
+  TaskList,
+  TaskItem.configure({
+    HTMLAttributes: {
+      class: 'flex flex-row space-x-2 items-top',
+    },
   })
 ]
 
