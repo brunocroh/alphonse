@@ -8,11 +8,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@alphonse/ui"
-import { Moon, Sun } from "lucide-react"
+import { Check, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export function ThemeSwitcher() {
-  const { setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
+
+  console.log({theme})
 
   return (
     <DropdownMenu>
@@ -24,11 +26,17 @@ export function ThemeSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="border-input">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+        <DropdownMenuItem onClick={() => setTheme("light")} className="flex flex-row justify-between">
+          <span>
+            Light
+          </span>
+          {theme === 'light' && <Check size={12} />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+        <DropdownMenuItem onClick={() => setTheme("dark")} className="flex flex-row justify-between">
+          <span>
+            Dark
+          </span>
+          {theme === 'dark' && <Check size={14} />}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
           System
