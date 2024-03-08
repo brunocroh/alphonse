@@ -29,7 +29,7 @@ export function MenuItem({
       onClick={onClick}
       aria-checked={isActive}
       className={cn(
-        "aria-checked:bg-secondary aria-checked:text-primary hover:bg-secondary h-8 rounded-none p-2 first:rounded-l-md last:rounded-r-md",
+        "aria-checked:bg-secondary aria-checked:text-primary hover:bg-secondary h-8 rounded-none p-2 first:rounded-l-md last:rounded-r-md active:scale-95",
         className
       )}
       {...props}
