@@ -14,8 +14,6 @@ import { useTheme } from "next-themes"
 export function ThemeSwitcher() {
   const { setTheme, theme } = useTheme()
 
-  console.log({theme})
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="transition-transform active:scale-95">
