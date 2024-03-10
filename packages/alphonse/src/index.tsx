@@ -20,6 +20,7 @@ import TaskList from '@tiptap/extension-task-list'
 import { useCurrentEditor, EditorProvider } from "@tiptap/react"
 
 import { BubbleMenu, DragAndDrop, PlaceholderExtension } from "./extensions/index"
+import { SlashCommand } from "./extensions/slash-command"
 
 export const extensions = [
   Document,
@@ -119,6 +120,11 @@ export const AlphonseEditor: React.FC<AlphonseEditor> = ({children}) => {
   return (
     <>
       <BubbleMenu editor={editor} />
+      <SlashCommand char="/" >
+        <div>
+          teste
+        </div>
+      </SlashCommand>
       {children}
     </>
   )
