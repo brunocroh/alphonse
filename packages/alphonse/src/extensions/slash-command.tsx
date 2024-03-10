@@ -1,7 +1,8 @@
+import Tippy from "@tippyjs/react/headless";
 import { PluginKey } from "@tiptap/pm/state";
 import { useCurrentEditor } from "@tiptap/react";
-import Suggestion, { SuggestionMatch, SuggestionOptions, Trigger } from "@tiptap/suggestion";
-import { useEffect, useState } from "react";
+import Suggestion, { SuggestionOptions } from "@tiptap/suggestion";
+import { useEffect, useRef, useState } from "react";
 
 type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>
 
@@ -12,8 +13,10 @@ type SlashCommand = Omit<Optional<SuggestionOptions, 'editor'>, 'pluginKey' | 'e
 }
 
 export const SlashCommand = ({editor, className, children, pluginKey, char}: SlashCommand) => {
+  const slashRef = useRef();
   const [element, setElement] = useState<HTMLDivElement | null>(null)
   const {editor: currentEditor} = useCurrentEditor()
+  const [coords, setCoords] = useState({top: 0, left: 0})
   const [visibility, setVisibility] = useState(false)
 
   useEffect(() => {
@@ -33,16 +36,15 @@ export const SlashCommand = ({editor, className, children, pluginKey, char}: Sla
       pluginKey: slashPluginKey,
       editor: slashEditor,
       char,
-      command: (props) => {
-        console.log({props})
-        console.log("WORKS?")
-      },
-     render: () => {
+      render: () => {
         // Optional: Implement custom rendering of the suggestion list.
         let reactRenderer: any = null;
         return {
-          onStart: () => {
-            console.log('start')
+          onStart: ({ range }) => {
+            const { to } = range;
+            const position = slashEditor.view.coordsAtPos(to);
+            setCoords({top: position.top, left: position.left})
+
             setVisibility(true)
           },
           onUpdate: () => {
@@ -71,8 +73,23 @@ export const SlashCommand = ({editor, className, children, pluginKey, char}: Sla
 
   }, [char, currentEditor, editor, element, pluginKey])
 
-  return <div ref={setElement} className={className} style={{ display: visibility ? 'block': 'none' }}>
-    {children}
-  </div>
+  return (
+    <div ref={setElement} className={className} id="slash-command">
+      {visibility && (
+        <Tippy
+          interactive
+          visible={visibility}
+          appendTo={() => document.querySelector('#slash-command')}
+          placement="bottom-start"
+          render={(attrs) => (
+            <div tabIndex={-1} {...attrs} style={{ position: 'absolute', top: coords.top, left: coords.left }}>
+              {children}
+            </div>
+          )}
+        />
+      )}
+    </div>
+
+  )
 
 }

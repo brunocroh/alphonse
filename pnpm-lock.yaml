@@ -109,6 +109,9 @@ importers:
       '@alphonse/ui':
         specifier: workspace:^
         version: link:../ui
+      '@tippyjs/react':
+        specifier: ^4.2.6
+        version: 4.2.6(react-dom@18.2.0)(react@18.2.0)
       '@tiptap/core':
         specifier: ^2.2.4
         version: 2.2.4(@tiptap/pm@2.2.4)
@@ -2697,6 +2700,17 @@ packages:
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.1
+    dev: false
+
+  /@tippyjs/react@4.2.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-91RicDR+H7oDSyPycI13q3b7o4O60wa2oRbjlz2fyRLmHImc4vyDwuUP8NtZaN0VARJY5hybvDYrFzhY9+Lbyw==}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tippy.js: 6.3.7
     dev: false
 
   /@tiptap/core@2.2.4(@tiptap/pm@2.2.4):
