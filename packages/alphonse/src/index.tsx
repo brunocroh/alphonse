@@ -122,10 +122,10 @@ export const AlphonseEditor: React.FC<AlphonseEditor> = ({children}) => {
     <>
       <BubbleMenu editor={editor} />
       <SlashCommand char="/" >
-        <Command className="border-input rounded-lg shadow-md">
+        <Command className="rounded-lg border p-2 shadow-lg">
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Base blocks">
+            <CommandGroup heading="Basic blocks">
               <CommandItem>
                 <Calendar className="mr-2 size-4" />
                 <span>Calendar</span>
