@@ -75,7 +75,7 @@ export const SlashCommand = ({editor, className, children, pluginKey, char}: Sla
         <Tippy
           interactive
           visible={visibility}
-          appendTo={() => document.querySelector('#slash-command')}
+          appendTo={() => document.querySelector('#slash-command')!}
           placement="bottom-start"
           render={(attrs) => (
             <div tabIndex={-1} {...attrs} style={{ position: 'absolute', top: coords.top, left: coords.left }}>
