@@ -2,7 +2,7 @@ import Tippy from "@tippyjs/react/headless";
 import { PluginKey } from "@tiptap/pm/state";
 import { useCurrentEditor } from "@tiptap/react";
 import Suggestion, { SuggestionOptions } from "@tiptap/suggestion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>
 
@@ -13,7 +13,6 @@ type SlashCommand = Omit<Optional<SuggestionOptions, 'editor'>, 'pluginKey' | 'e
 }
 
 export const SlashCommand = ({editor, className, children, pluginKey, char}: SlashCommand) => {
-  const slashRef = useRef();
   const [element, setElement] = useState<HTMLDivElement | null>(null)
   const {editor: currentEditor} = useCurrentEditor()
   const [coords, setCoords] = useState({top: 0, left: 0})
@@ -37,7 +36,6 @@ export const SlashCommand = ({editor, className, children, pluginKey, char}: Sla
       editor: slashEditor,
       char,
       render: () => {
-        // Optional: Implement custom rendering of the suggestion list.
         let reactRenderer: any = null;
         return {
           onStart: ({ range }) => {
@@ -55,7 +53,7 @@ export const SlashCommand = ({editor, className, children, pluginKey, char}: Sla
           onKeyDown: () => {
             console.log('keydown')
             // Handle key down events, e.g., for custom navigation
-            return false; // Return true if the event is handled
+            return false;
           },
           onExit: () => {
             console.log('exit')
@@ -69,8 +67,6 @@ export const SlashCommand = ({editor, className, children, pluginKey, char}: Sla
     slashEditor.registerPlugin(plugin)
 
     return () => slashEditor.unregisterPlugin(slashPluginKey)
-
-
   }, [char, currentEditor, editor, element, pluginKey])
 
   return (
