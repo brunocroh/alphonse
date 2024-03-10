@@ -1,8 +1,8 @@
 import "./prosemirror.css"
 
 import React from "react"
-import { Card, CardContent, CardHeader, Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut  } from "@alphonse/ui"
-import { Calculator, Calendar, CreditCard, Settings, Smile, User } from "lucide-react"
+import { Card, CardContent, CardHeader, Command, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut  } from "@alphonse/ui"
+import { Calculator, Calendar, Smile } from "lucide-react"
 import Bold from "@tiptap/extension-bold"
 import Document from "@tiptap/extension-document"
 import Heading from "@tiptap/extension-heading"
@@ -122,11 +122,10 @@ export const AlphonseEditor: React.FC<AlphonseEditor> = ({children}) => {
     <>
       <BubbleMenu editor={editor} />
       <SlashCommand char="/" >
-        <Command className="rounded-lg border shadow-md">
-          <CommandInput placeholder="Type a command or search..." />
+        <Command className="border-input rounded-lg shadow-md">
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Suggestions">
+            <CommandGroup heading="Base blocks">
               <CommandItem>
                 <Calendar className="mr-2 size-4" />
                 <span>Calendar</span>
@@ -141,23 +140,6 @@ export const AlphonseEditor: React.FC<AlphonseEditor> = ({children}) => {
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Settings">
-              <CommandItem>
-                <User className="mr-2 size-4" />
-                <span>Profile</span>
-                <CommandShortcut>⌘P</CommandShortcut>
-              </CommandItem>
-              <CommandItem>
-                <CreditCard className="mr-2 size-4" />
-                <span>Billing</span>
-                <CommandShortcut>⌘B</CommandShortcut>
-              </CommandItem>
-              <CommandItem>
-                <Settings className="mr-2 size-4" />
-                <span>Settings</span>
-                <CommandShortcut>⌘S</CommandShortcut>
-              </CommandItem>
-            </CommandGroup>
           </CommandList>
         </Command>
       </SlashCommand>
